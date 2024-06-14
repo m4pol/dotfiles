@@ -155,9 +155,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-client.focused              #964B00 #964B00 #FFFFFF #964B00
-client.unfocused            #808080 #808080 #000000 #808080
-client.focused_inactive     #964B00 #964B00 #FFFFFF #964B00
+client.focused              #aa000000 #aa000000 #aa000000 #aa000000
+client.unfocused            #aa000000 #aa000000 #aa000000 #aa000000
+client.focused_inactive     #aa000000 #aa000000 #aa000000 #aa000000
 
 bindsym $mod+r mode "resize"
 
