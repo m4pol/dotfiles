@@ -5,7 +5,7 @@ mkdir Projects && mkdir Pictures/Wallpapers
 brightnessctl s 163
 sudo timedatectl set-timezone Asia/Bangkok
 
-sudo dnf install kernel-devel -y
+sudo dnf install xset kernel-devel -y
 
 sudo dnf update -y && sudo dnf upgrade -y && sudo clean packages -y
 
