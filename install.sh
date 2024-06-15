@@ -4,6 +4,7 @@
 mkdir Projects && mkdir Pictures/Wallpapers
 brightnessctl s 163
 sudo timedatectl set-timezone Asia/Bangkok
+sudo grubby --update-kernel=ALL --args="iwlwifi.power_save=0 iwlmvm.power_scheme=1"
 
 sudo dnf install xset kernel-devel -y
 
@@ -13,14 +14,18 @@ sudo dnf install NetworkManager-tui -y
 
 # [ Config DNS of IPv4 to Google DNS server then reboot ]
 
-sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ rofi picom stow -y
+sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ rofi picom stow fira-code-fonts -y
+fc-cache -f -v
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# [ Nividia driver install ]
+# [ Retrieve and enable non-free fedora repo ]
 
 sudo dnf config-manager --enable fedora-cisco-openh264
 sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+
+# [ Nividia driver install ]
 
 sudo dnf upgrade --refresh -y
 
