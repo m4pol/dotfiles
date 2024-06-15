@@ -93,12 +93,12 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # set workspace icons
-set $ws1 "1 icon"
-set $ws2 "2 icon"
-set $ws3 "3 icon"
-set $ws4 "4 icon"
-set $ws5 "5 icon"
-set $ws6 "6 icon"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
