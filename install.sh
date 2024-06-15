@@ -23,7 +23,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 sudo dnf config-manager --enable fedora-cisco-openh264
 sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-
+sudo dnf config-manager --disable fedora-cisco-openh264
 
 # [ Nividia driver install ]
 
@@ -32,7 +32,6 @@ sudo dnf upgrade --refresh -y
 sudo dnf install kernel-headers xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
 
 sudo akmods --force
-sudo dracut --force
 
 sudo reboot
 
