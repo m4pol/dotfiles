@@ -21,7 +21,7 @@ sudo dnf config-manager --disable fedora-cisco-openh264
 # [ Install Nvidia driver ]
 sudo dnf upgrade --refresh -y
 sudo dnf install kernel-headers xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
-# [ Chekc if akmods is installed thne reboot ]
+# [ Check if akmods is installed and reboot ]
 sudo akmods --force
 sudo reboot
 
