@@ -173,8 +173,8 @@ exec_always --no-startup-id polybar
 # Display
 gaps inner 8
 gaps outer 8
-bindsym $mod+Shift+s exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
-bindsym $mod+Shift+a exec --no-startup-id maim "home/$USER/Pictures/Screenshots/$(date)"
+bindsym $mod+Shift+s exec --no-startup-id maim -s "/home/$USER/Pictures/Screenshots/$(date).png"
+bindsym $mod+Shift+i exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 exec_always feh --bg-scale ~/Pictures/Wallpapers/kong.png
 exec_always xset s off
 exec_always xset xset -dpms
