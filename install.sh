@@ -6,7 +6,7 @@ sudo dnf install xset NetworkManager-tui kernel-devel -y
 sudo dnf update -y && sudo dnf upgrade -y && sudo clean packages -y
 
 # [ Install stuff ]
-sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ rofi picom stow fira-code-fonts -y
+sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom stow fira-code-fonts -y
 fc-cache -f -v
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
