@@ -6,9 +6,7 @@ sudo dnf install xset NetworkManager-tui kernel-devel -y
 sudo dnf update -y && sudo dnf upgrade -y && sudo clean packages -y
 
 # [ Install stuff ]
-sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom fira-code-fonts xclip maim -y
-fc-cache -f -v
-
+sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # [ Enable openh libary and install non-free RPM ]
@@ -18,7 +16,8 @@ sudo dnf config-manager --disable fedora-cisco-openh264
 
 # [ Install Nvidia driver ]
 sudo dnf upgrade --refresh -y
-sudo dnf install kernel-headers xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
+sudo dnf install fira-code-fonts kernel-headers xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
+fc-cache -f
 # [ Check if akmods is installed and reboot ]
 sudo akmods --force
 sudo reboot
