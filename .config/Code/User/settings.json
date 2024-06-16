@@ -1,0 +1,10 @@
+{
+    "workbench.iconTheme": "vscode-great-icons",
+    "editor.fontSize": 18,
+    "editor.tabSize": 8,
+    "glassit.alpha": 240,
+    "editor.cursorBlinking": "smooth",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "One Dark Pro Darker"
+}
