@@ -1,1 +1,1 @@
-![Terminal stuff](./screenshots/1.png)
+![Terminal stuff](./screenshot/1.png)
