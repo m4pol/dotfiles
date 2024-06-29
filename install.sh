@@ -14,7 +14,7 @@ sudo dnf config-manager --enable fedora-cisco-openh264
 sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf config-manager --disable fedora-cisco-openh264
 
-# [ Install Nvidia driver ]
+# [ Install Nvidia driver and Fira font ]
 sudo dnf upgrade --refresh -y
 sudo dnf install fira-code-fonts kernel-headers xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
 fc-cache -f
@@ -22,14 +22,14 @@ fc-cache -f
 sudo akmods --force
 sudo reboot
 
-# [ Add Option "PrimaryGPU" "yes" to /etc/X11/xorg.conf.d/nvidia.conf in "OutputClass" section ]
+# [ Set nvidia as a main GPU ]
 # sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
 #
-# [ Edit "display_setup.sh" according to the Arch linux document https://wiki.archlinux.org/title/NVIDIA_Optimus#Display_managers ]
+# Set display manager for nvidia
 # touch /etc/lightdm/display_setup.sh && chmod +x /etc/lightdm/display_setup.sh
 #
 # [ Fix screen tearing ]
 # touch /etc/modprobe.d/nvidia-drm-nomodeset.conf && echo "options nvidia-drm modeset=1" > /etc/modprobe.d/nvidia-drm-nomodeset.conf
 #
-# [ Must turn picom off every time if need to play any games ]
+# [ Note: Must turn picom off every time if need to play any games ]
 # HD2 Launch option = dx11 / --use-d3d11
