@@ -3,7 +3,7 @@ brightnessctl s 163
 sudo timedatectl set-timezone Asia/Bangkok
 sudo grubby --update-kernel=ALL --args="iwlwifi.power_save=0 iwlmvm.power_scheme=1"
 sudo dnf install xset NetworkManager-tui kernel-devel -y
-sudo dnf update -y && sudo dnf upgrade -y && sudo clean packages -y
+sudo dnf update -y && sudo dnf upgrade -y && sudo dnf clean packages -y
 
 # [ Install stuff ]
 sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim -y
