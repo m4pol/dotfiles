@@ -1,6 +1,6 @@
 {
     "workbench.iconTheme": "vscode-great-icons",
-    "editor.fontSize": 18,
+    "editor.fontSize": 19,
     "editor.tabSize": 8,
     "glassit.alpha": 240,
     "editor.cursorBlinking": "smooth",
