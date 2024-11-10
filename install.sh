@@ -30,6 +30,3 @@ sudo reboot
 #
 # [ Fix screen tearing ]
 # sudo touch /etc/modprobe.d/nvidia-drm-nomodeset.conf && sudo echo "options nvidia-drm modeset=1" > /etc/modprobe.d/nvidia-drm-nomodeset.conf
-#
-# [ Note: Must turn picom off every time if need to play any games ]
-# HD2 Launch option = dx11 / --use-d3d11
