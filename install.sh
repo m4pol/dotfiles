@@ -2,7 +2,7 @@
 brightnessctl s 152
 sudo timedatectl set-timezone Asia/Bangkok
 sudo grubby --update-kernel=ALL --args="iwlwifi.power_save=0 iwlmvm.power_scheme=1"
-sudo dnf install xset NetworkManager-tui kernel-devel kernel-headers dkms fira-code-fonts -y
+sudo dnf install xset NetworkManager-tui kernel-devel kernel-headers dkms fira-code-fonts liberation-fonts -y
 sudo dnf update -y && sudo dnf upgrade -y && sudo dnf clean packages -y
 
 sudo rm -rf ~/.config && sudo mv .config ~/.config
