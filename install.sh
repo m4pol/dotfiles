@@ -1,32 +1,40 @@
-# [ Set brightness, timezone, disable power saving mode, and brah brah brah ]
+# Basic system setup and installation.
 brightnessctl s 152
 sudo timedatectl set-timezone Asia/Bangkok
 sudo grubby --update-kernel=ALL --args="iwlwifi.power_save=0 iwlmvm.power_scheme=1"
-sudo dnf install xset NetworkManager-tui kernel-devel -y
+sudo dnf install xset NetworkManager-tui kernel-devel kernel-headers dkms fira-code-fonts -y > /dev/null
 sudo dnf update -y && sudo dnf upgrade -y && sudo dnf clean packages -y
+mkdir ~/Projects && mkdir ~/Downloads/OS && fc-cache -f
 
-# [ Install stuff ]
-sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim -y
+sudo rm -rf ~/.config && sudo cp .config ~/.config
+sudo rm -rf ~/.local && sudo cp .local ~/.local
+sudo rm -rf /etc/polybar && sudo cp polybar /etc/polybar
+
+# Tools installation.
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# [ Enable openh libary and install non-free RPM ]
-sudo dnf config-manager --enable fedora-cisco-openh264
+sudo cp .zshrc ~/.zshrc
+sudo cp virtualbox.repo /etc/yum.repos.d/virtualbox.repo
+
+sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code VirtualBox-7.1 -y
+sudo usermod -a -G vboxusers $USER
+
+# Enable/Disable openh library and install non-free RPM.
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-sudo dnf config-manager --disable fedora-cisco-openh264
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=0
 
-# [ Install Nvidia driver and Fira font ]
+# Nvidia driver installation and setup.
 sudo dnf upgrade --refresh -y
-sudo dnf install fira-code-fonts kernel-headers xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
-fc-cache -f
-# [ Check if akmods is installed and reboot ]
-sudo akmods --force
-sudo reboot
+sudo dnf install xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
 
-# [ Set nvidia as a main GPU ]
-# sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
-#
-# Set display manager for nvidia
-# touch /etc/lightdm/display_setup.sh && chmod +x /etc/lightdm/display_setup.sh
-#
-# [ Fix screen tearing ]
-# sudo touch /etc/modprobe.d/nvidia-drm-nomodeset.conf && sudo echo "options nvidia-drm modeset=1" > /etc/modprobe.d/nvidia-drm-nomodeset.conf
+sudo akmods --force
+
+sudo cp nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
+sudo cp display_setup.sh /etc/lightdm/display_setup.sh
+sudo cp nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
+sudo rm -rf /etc/lightdm/lightdm.conf && sudo cp lightdm.conf /etc/lightdm/lightdm.conf
+
+sudo reboot
