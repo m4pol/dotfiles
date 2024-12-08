@@ -10,14 +10,14 @@ sudo rm -rf /etc/polybar && sudo mv polybar /etc/polybar
 sudo fc-cache -f
 sudo xset s off
 
+# Install non-free RPM.
+sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
 # Tools installation.
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 sudo mv virtualbox.repo /etc/yum.repos.d/virtualbox.repo
 sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code steam discord VirtualBox-7.1 -y
-
-# Install non-free RPM.
-sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
 # Nvidia driver installation and setup.
 sudo dnf upgrade --refresh -y
