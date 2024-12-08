@@ -18,7 +18,6 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo mv virtualbox.repo /etc/yum.repos.d/virtualbox.repo
 
 sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code VirtualBox-7.1 -y
-sudo usermod -a -G vboxusers $USER
 
 # Enable/Disable openh library and install non-free RPM.
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
@@ -33,11 +32,6 @@ sudo akmods --force
 
 sudo reboot
 
-# sudo mv display_setup.sh /etc/lightdm/display_setup.sh
-# sudo mv nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
-# sudo rm -rf /etc/lightdm/lightdm.conf && sudo mv lightdm.conf /etc/lightdm/lightdm.conf
-
-# sudo chmod +x /etc/lightdm/display_setup.sh
-
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # sudo mv .zshrc ~/.zshrc
+# sudo usermod -a -G vboxusers $USER
