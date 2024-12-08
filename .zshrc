@@ -3,9 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$PATH:/usr/local/go/bin
-
-fastfetch
 
 alias noodle='sudo dnf update -y && sudo dnf upgrade -y && sudo dnf clean packages -y'
 
