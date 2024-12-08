@@ -31,13 +31,14 @@ sudo dnf install xrandr akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-lib
 
 sudo akmods --force
 
-sudo mv nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
-sudo mv display_setup.sh /etc/lightdm/display_setup.sh
-sudo mv nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
-sudo rm -rf /etc/lightdm/lightdm.conf && sudo mv lightdm.conf /etc/lightdm/lightdm.conf
+sudo reboot
 
-sudo chmod +x /etc/lightdm/display_setup.sh
+# sudo mv nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
+# sudo mv display_setup.sh /etc/lightdm/display_setup.sh
+# sudo mv nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
+# sudo rm -rf /etc/lightdm/lightdm.conf && sudo mv lightdm.conf /etc/lightdm/lightdm.conf
 
-# Setup zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sudo chmod +x /etc/lightdm/display_setup.sh
+
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # sudo mv .zshrc ~/.zshrc
