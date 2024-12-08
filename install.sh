@@ -12,13 +12,14 @@ sudo rm -rf /etc/polybar && sudo mv polybar /etc/polybar
 # Tools installation.
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo mv .zshrc ~/.zshrc
 sudo mv virtualbox.repo /etc/yum.repos.d/virtualbox.repo
 
 sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code VirtualBox-7.1 -y
 sudo usermod -a -G vboxusers $USER
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Enable/Disable openh library and install non-free RPM.
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
