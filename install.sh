@@ -5,9 +5,9 @@ sudo grubby --update-kernel=ALL --args="iwlwifi.power_save=0 iwlmvm.power_scheme
 sudo dnf install xset NetworkManager-tui kernel-devel kernel-headers dkms fira-code-fonts -y
 sudo dnf update -y && sudo dnf upgrade -y && sudo dnf clean packages -y
 
-sudo rm -rf ~/.config && sudo cp .config ~/.config
-sudo rm -rf ~/.local && sudo cp .local ~/.local
-sudo rm -rf /etc/polybar && sudo cp polybar /etc/polybar
+sudo rm -rf ~/.config && sudo mv .config ~/.config
+sudo rm -rf ~/.local && sudo mv .local ~/.local
+sudo rm -rf /etc/polybar && sudo mv polybar /etc/polybar
 
 # Tools installation.
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
