@@ -33,7 +33,6 @@ sudo akmods --force
 
 sudo reboot
 
-# sudo mv nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
 # sudo mv display_setup.sh /etc/lightdm/display_setup.sh
 # sudo mv nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
 # sudo rm -rf /etc/lightdm/lightdm.conf && sudo mv lightdm.conf /etc/lightdm/lightdm.conf
