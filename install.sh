@@ -17,7 +17,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 
 sudo mv virtualbox.repo /etc/yum.repos.d/virtualbox.repo
 
-sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code VirtualBox-7.1 -y
+sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code steam discord VirtualBox-7.1 -y
 
 # Enable/Disable openh library and install non-free RPM.
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
