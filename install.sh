@@ -40,4 +40,4 @@ sudo chmod +x /etc/lightdm/display_setup.sh
 
 # Setup zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo mv .zshrc ~/.zshrc
+# sudo mv .zshrc ~/.zshrc
