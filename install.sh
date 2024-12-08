@@ -9,6 +9,8 @@ sudo rm -rf ~/.config && sudo mv .config ~/.config
 sudo rm -rf ~/.local && sudo mv .local ~/.local
 sudo rm -rf /etc/polybar && sudo mv polybar /etc/polybar
 
+sudo fc-cache -f && sudo xset s off
+
 # Tools installation.
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
