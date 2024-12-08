@@ -36,6 +36,8 @@ sudo mv display_setup.sh /etc/lightdm/display_setup.sh
 sudo mv nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
 sudo rm -rf /etc/lightdm/lightdm.conf && sudo mv lightdm.conf /etc/lightdm/lightdm.conf
 
+sudo chmod +x /etc/lightdm/display_setup.sh
+
 # Setup zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo mv .zshrc ~/.zshrc
