@@ -15,13 +15,10 @@ sudo fc-cache -f && sudo xset s off
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 
-sudo mv .zshrc ~/.zshrc
 sudo mv virtualbox.repo /etc/yum.repos.d/virtualbox.repo
 
 sudo dnf install polybar feh kitty fastfetch git zsh vim gcc g++ vcpkg rofi picom xclip maim code VirtualBox-7.1 -y
 sudo usermod -a -G vboxusers $USER
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Enable/Disable openh library and install non-free RPM.
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
@@ -39,4 +36,6 @@ sudo mv display_setup.sh /etc/lightdm/display_setup.sh
 sudo mv nvidia-drm-nomodeset.conf /etc/modprobe.d/nvidia-drm-nomodeset.conf
 sudo rm -rf /etc/lightdm/lightdm.conf && sudo mv lightdm.conf /etc/lightdm/lightdm.conf
 
-sudo reboot
+# Setup zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo mv .zshrc ~/.zshrc
