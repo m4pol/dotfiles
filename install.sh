@@ -1,4 +1,5 @@
-# Basic system setup and installation.
+#!/bin/bash
+
 brightnessctl s 152
 sudo timedatectl set-timezone Asia/Bangkok
 sudo grubby --update-kernel=ALL --args="iwlwifi.power_save=0 iwlmvm.power_scheme=1"
